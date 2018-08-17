@@ -1,0 +1,686 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ApoloContacts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-11 22:23+0200\n"
+"PO-Revision-Date: 2017-05-11 22:29+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.9\n"
+"Last-Translator: \n"
+"Language: fr\n"
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.view_crm_partner_geo_form
+msgid "<span class=\"oe_inline\"> ( On  </span>"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.view_crm_partner_geo_form
+msgid "<span> : Lat : </span>"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.view_crm_partner_geo_form
+msgid "<span> ;  Long:  </span>"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_a_jeudi_am
+msgid "A jeudi am"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_a_jeudi_pm
+msgid "A jeudi pm"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_a_lundi_am
+msgid "A lundi am"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_a_lundi_pm
+msgid "A lundi pm"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_a_mardi_am
+msgid "A mardi am"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_a_mardi_pm
+msgid "A mardi pm"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_a_mercredi_am
+msgid "A mercredi am"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_a_mercredi_pm
+msgid "A mercredi pm"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_a_samedi_am
+msgid "A samedi am"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_a_samedi_pm
+msgid "A samedi pm"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_a_vendredi_am
+msgid "A vendredi am"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_a_vendredi_pm
+msgid "A vendredi pm"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_annee_diplome
+msgid "Annee diplome"
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,statut:0
+msgid "Association"
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,specialite_ids:0
+msgid "Autre"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,help:ApoloContacts.field_res_partner_fclient
+msgid "Check this box if this contact is a customer."
+msgstr "Cochez cette case si ce contact est un client."
+
+#. module: ApoloContacts
+#: model:ir.model.fields,help:ApoloContacts.field_res_partner_fournisseur
+msgid ""
+"Check this box if this contact is a vendor. If it's not checked, purchase "
+"people will not see it when encoding a purchase order."
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,specialite_ids:0
+msgid "Chirurgie Buccale"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Civilité"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_fclient
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Client"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.actions.act_window,name:ApoloContacts.action_contacts_apolo
+#: model:ir.ui.menu,name:ApoloContacts.menu_action_apolo_client
+msgid "Clients"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.actions.act_window,help:ApoloContacts.action_contacts_apolo
+msgid "Cliquez pour créer un nouveau client."
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_codeINSEE
+msgid "Code INSEE"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Commandes"
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:purchase.order,company_type:0
+msgid "Company"
+msgstr "Compagnie"
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_purchase_order_company_type
+msgid "Company Type"
+msgstr "Type de la Compagnie"
+
+#. module: ApoloContacts
+#: model:ir.ui.menu,name:ApoloContacts.menu_action_contacts_Contac_Tags
+msgid "Contact Tags"
+msgstr "Etiquettes Client"
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Date d'obtention du diplôme"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_max_sale_order_date
+msgid "Date de la derniere commande"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_diplome
+msgid "Diplome"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Diplôme"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_distributeur
+#: selection:purchase.order,company_selection:0
+#: selection:res.partner,company_selection:0
+msgid "Distributeur"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.menu,name:ApoloContacts.menu_action_contacts_Distributeur_Apolocontacts
+msgid "Distributeurs"
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,statut:0
+msgid "E.I."
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,statut:0
+msgid "E.I.R.L."
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,statut:0
+msgid "E.U.R.L."
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,individu_type:0
+msgid "Employe"
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,specialite_ids:0
+msgid "Endodontie"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Famille Client"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_show_document_count
+msgid "Fichier"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Fichiers"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_fournisseur
+#: selection:purchase.order,company_selection:0
+#: selection:res.partner,company_selection:0
+msgid "Fournisseur"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.menu,name:ApoloContacts.menu_action_contacts_Fournisseur_Apolocontacts
+msgid "Fournisseurs"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.view_crm_partner_geo_form
+msgid "GEOLOCALISATION"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_partner_latitude
+msgid "Geo Latitude"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_partner_longitude
+msgid "Geo Longitude"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.view_crm_partner_geo_form
+msgid "Geolocate"
+msgstr "Géolocaliser"
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.view_crm_partner_geo_form
+msgid "Geolocation"
+msgstr "Géolocalisation"
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_date_localization
+msgid "Geolocation Date"
+msgstr "Date de Géolocalisation"
+
+#. module: ApoloContacts
+#: selection:res.partner,specialite_ids:0
+msgid "Gerontodontie"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_google
+msgid "Google"
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,specialite_ids:0
+msgid "Implantodontie"
+msgstr ""
+
+#. module: ApoloContacts
+#: code:addons/ApoloContacts/models/res_partner.py:32
+#, python-format
+msgid ""
+"Impossible de contacter le serveur. Merci de bien vouloir vérifier vos accés "
+"à internet afin de pouvoir effectuer un nouvel essai (%s)."
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,individu_type:0
+msgid "Independant"
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:purchase.order,company_type:0
+msgid "Individu"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_individu_type
+msgid "Individu Type"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_jeudi_am
+msgid "Jeudi am"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Jeudi apres-midi"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Jeudi matin"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_jeudi_pm
+msgid "Jeudi pm"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_jours_ouverture
+msgid "Jours ouverture"
+msgstr ""
+
+#. module: ApoloContacts
+#: sql_constraint:res.partner:0
+msgid ""
+"Le contact que vous enregistrez, semble deja exister. Utilisez le bouton "
+"liste pour comparer et fusionner."
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_line_id
+msgid "Line id"
+msgstr "Id de la ligne"
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Liste"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_lundi_am
+msgid "Lundi am"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Lundi apres-midi"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Lundi matin"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_lundi_pm
+msgid "Lundi pm"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_mardi_am
+msgid "Mardi am"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Mardi apres-midi"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Mardi matin"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_mardi_pm
+msgid "Mardi pm"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_mercredi_am
+msgid "Mercredi am"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Mercredi apres-midi"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Mercredi matin"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_mercredi_pm
+msgid "Mercredi pm"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_duplicate_name
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Nom"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Num. commande"
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,specialite_ids:0
+msgid "Occlusodontie"
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,specialite_ids:0
+msgid "Omnipraticien"
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,specialite_ids:0
+msgid "Orthodontie"
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,specialite_ids:0
+msgid "Parodontie"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Partenaire Bloqué"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model,name:ApoloContacts.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: ApoloContacts
+#: model:ir.model,name:ApoloContacts.model_res_partner_category
+msgid "Partner Tags"
+msgstr "Etiquettes Partenaire"
+
+#. module: ApoloContacts
+#: selection:res.partner,specialite_ids:0
+msgid "Pedodontie"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_praticien
+#: selection:res.partner,individu_selection:0
+msgid "Praticien"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_prenom
+msgid "Prenom"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_prospect
+#: selection:res.partner,individu_selection:0
+msgid "Prospect"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.menu,name:ApoloContacts.menu_action_contacts_Prospect_Apolocontacts
+msgid "Prospects"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Prénom"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model,name:ApoloContacts.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_category_ref_cat_contact
+msgid "Référence catégorie"
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,statut:0
+msgid "S.A."
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,statut:0
+msgid "S.A.R.L."
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,statut:0
+msgid "S.A.S."
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,statut:0
+msgid "S.A.S.U."
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,statut:0
+msgid "S.C.P."
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,statut:0
+msgid "S.E.L.A.R.L."
+msgstr ""
+
+#. module: ApoloContacts
+#: selection:res.partner,statut:0
+msgid "S.N.C."
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_sale_id
+msgid "Sale id"
+msgstr "Id de vente"
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_saleorder_ids
+msgid "Sales Lines"
+msgstr "Lignes de vente"
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Sales Orders"
+msgstr "Commandes"
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_samedi_am
+msgid "Samedi am"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Samedi apres-midi"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Samedi matin"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_samedi_pm
+msgid "Samedi pm"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_purchase_order_company_selection
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_company_selection
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_individu_selection
+msgid "Selection"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Société liée"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_specialite_ids
+msgid "Specialite ids"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Specialité"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_statut
+msgid "Statut"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Statut Juridique A Renseigner"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_duplicate_category_id
+msgid "Tags"
+msgstr "Etiquettes"
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_duplicate_phone
+msgid "Telephone"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Total TTC"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Total Tax Included"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.menu,name:ApoloContacts.menu_action_contacts_Tous_Apolocontacts
+msgid "Tous"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_vendredi_am
+msgid "Vendredi am"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Vendredi apres-midi"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "Vendredi matin"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_vendredi_pm
+msgid "Vendredi pm"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_kanban_view
+msgid "at"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.model.fields,field_description:ApoloContacts.field_res_partner_bloque
+msgid "bloque"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "code INSEE de la ville (5 chiffres)"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_base_form_view
+msgid "horaires d'ouverture"
+msgstr ""
+
+#. module: ApoloContacts
+#: model:ir.ui.view,arch_db:ApoloContacts.ApoloContacts_partner_category_base_form_view
+msgid "value"
+msgstr "valeur"

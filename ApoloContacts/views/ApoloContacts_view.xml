@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding= "utf-8"?>
+
+<odoo>
+    <data>
+
+        <record id="ApoloContacts_partner_category_base_form_view" model="ir.ui.view">
+            <field name="inherit_id" ref="base.view_partner_category_form"/>
+            <field name="model">res.partner.category</field>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group" position="inside">
+                    <field name="ref_cat_contact">value</field>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="ApoloContacts_partner_category_base_list_view" model="ir.ui.view">
+            <field name="inherit_id" ref="base.view_partner_category_list"/>
+            <field name="model">res.partner.category</field>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="ref_cat_contact" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="ApoloContacts_partner_category_base_search_view" model="ir.ui.view">
+            <field name="name">category.search</field>
+            <field name="model">res.partner.category</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" />
+                    <field name="active" />
+                    <field name="ref_cat_contact" />
+                </search>
+            </field>
+        </record>
+        
+        <record id="ApoloProducts_partner_search_view" model="ir.ui.view">
+            <field name="name">res.partner.search.salespersons</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='type_company']" position="after">
+                    <separator/>
+                    <filter string="Associated to a salesperson" name="salesperson_associated" domain="[('user_id', '!=', False)]"/>
+                    <filter string="Not associated to a salesperson" name="salesperson_not_associated" domain="[('user_id', '=', False)]"/>
+                    <separator/>
+                    <filter string="Clients bloqués" name="client_blocked" domain="[('bloque', '=', True)]" groups="sales_team.group_sale_manager"/>
+                    <filter string="Clients pas bloqués" name="client_not_blocked" domain="[('bloque', '!=', True)]" groups="sales_team.group_sale_manager"/>
+                    <filter string="Clients actifs" name="client_act" domain="[('inactif', '!=', True)]" groups="sales_team.group_sale_manager"/>
+                    <filter string="Clients inactifs" name="client_inact" domain="[('inactif', '=', True)]" groups="sales_team.group_sale_manager"/>
+                </xpath>
+            </field>
+        </record>
+      
+<!--
+******************************************************************************************
+*    AJOUT DES CHAMPS PERSONALISE  DANS LA VUE FORM CREATION/MODIFICATION DE CONTACTS    *
+******************************************************************************************
+-->
+   
+        <record id= "ApoloContacts_partner_base_form_view" model= "ir.ui.view">
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="model">res.partner</field>
+                                        
+                <field name="arch" type= "xml">
+                
+          
+<!--                AJOUT D'UN BOUTON DOCUMENT DANS LE BANDEAU DE BOUTONS SOUS LE HEADER         -->
+                
+                <div name="button_box" position="inside">
+                    <button type="object"
+                        class="oe_stat_button"
+                        icon="fa-file"
+                        name="show_document">
+                            <field string="Fichiers" name="show_document_count" widget="statinfo"/>
+                    </button>                    
+
+                    <button type="object"
+                        class="oe_stat_button"
+                        icon="fa-file"
+                        name="show_list_customer_to_merge" string="Liste" widget="statinfo" context="{'display_name':'name'}">   
+                    </button>                    
+                </div> 
+            
+
+                               
+                <xpath expr="//sheet/group/group/field[@name='function']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('company_type', '=', 'company')]}</attribute>
+                </xpath>
+                
+                <xpath expr="//sheet/div/div/field[@name='parent_id']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('company_type', '=', 'company')]}</attribute>
+                </xpath>
+                
+                <xpath expr="//sheet/group/group/field[@name='title']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('company_type', '=', 'company')]}</attribute>
+                </xpath>
+                
+                <xpath expr="//sheet/notebook/page/field/form/sheet/field[@name='type']" position="inside">
+                   <field name="type" invisible="1"/>
+                </xpath>
+                    
+                <xpath expr="//sheet/div/h1/field[@name='name']" position="replace">
+                  
+                </xpath>
+                
+                <xpath expr="//sheet/div/div/field[@name='parent_id']" position="replace">
+                  
+                </xpath>
+                
+                <xpath expr="//sheet/group/group/field[@name='title']" position="replace">
+                  
+                </xpath>
+                
+                <xpath expr="//form/sheet" position="before">
+                   
+                </xpath>
+                <!--<xpath expr="//form[@string]" position="attributes">
+                    <attribute name="style">display:inline;</attribute>
+                </xpath>-->
+                
+                <xpath expr="//sheet/group/group/field[@name='category_id']" position="replace">
+                  
+                </xpath>
+                
+                <xpath expr="//sheet/group/group/field[@name='website']" position="before">
+                    <field name="codeINSEE" string="code INSEE de la ville (5 chiffres)" attrs="{'invisible': [('individu_type', '=', 'employe')]}" class="o_address_street" size="5"/> 
+                </xpath>
+                
+                <xpath expr="//page[@name='sales_purchases']/group">
+                    <group name="favorite_products" string="Favorite products">
+                        <field name="favorite_ids" nolabel="1"/>
+                    </group>
+                </xpath>
+                               
+                   <notebook position="inside">
+                        <page string="horaires d'ouverture">
+                            <group col='4'>
+                               <group>
+                                   <field name="lundi_am" widget="float_time" string="Lundi matin" selectable= "False" context="{'search_disable_custom_filters': True}"/>
+                                   <field name="mardi_am" widget="float_time" string="Mardi matin"/>       
+                                   <field name="mercredi_am" widget="float_time" string="Mercredi matin"/>
+                                   <field name="jeudi_am" widget="float_time" string="Jeudi matin"/>
+                                   <field name="vendredi_am" widget="float_time" string="Vendredi matin"/>
+                                   <field name="samedi_am" widget="float_time" string="Samedi matin"/>                         
+                               </group>
+                               <group>
+                                   <field name="a_lundi_am" widget="float_time" string="A"/>
+                                   <field name="a_mardi_am" widget="float_time" string="A"/>       
+                                   <field name="a_mercredi_am" widget="float_time" string="A"/>
+                                   <field name="a_jeudi_am" widget="float_time" string="A"/>
+                                   <field name="a_vendredi_am" widget="float_time" string="A"/>
+                                   <field name="a_samedi_am" widget="float_time" string="A"/>
+                               </group> 
+                               <group>
+                                   <field name="lundi_pm" widget="float_time" string="Lundi apres-midi"/>
+                                   <field name="mardi_pm" widget="float_time" string="Mardi apres-midi"/>
+                                   <field name="mercredi_pm" widget="float_time" string="Mercredi apres-midi"/>
+                                   <field name="jeudi_pm" widget="float_time" string="Jeudi apres-midi"/>
+                                   <field name="vendredi_pm" widget="float_time" string="Vendredi apres-midi"/>
+                                   <field name="samedi_pm" widget="float_time" string="Samedi apres-midi"/>
+                               </group>
+                               <group>
+                                   <field name="a_lundi_pm" widget="float_time" string="A"/>
+                                   <field name="a_mardi_pm" widget="float_time" string="A"/>
+                                   <field name="a_mercredi_pm" widget="float_time" string="A"/>
+                                   <field name="a_jeudi_pm" widget="float_time" string="A"/>
+                                   <field name="a_vendredi_pm" widget="float_time" string="A"/>
+                                   <field name="a_samedi_pm" widget="float_time" string="A"/>
+                               </group>
+                               
+                            </group>
+                        </page>
+                        
+                        <page string="Commandes">
+                            <field name="id" invisible="1" />
+                            <field name="sale_order_ids" context="{'default_partner_id': id}">
+                                 <tree string="Sales Orders">
+                                    <field name="message_needaction" invisible="1"/>
+                                    <field name="name" string="Num. commande"/>
+                                    <field name="client_order_ref"/>
+                                    <field name="date_order"/>
+                                    <field name="partner_id" invisible="1"/>
+                                    <field name="user_id"/>
+                                    <field name="amount_untaxed" sum="Total Tax Included" widget="monetary"/>
+                                    <field name="amount_total" string="Total TTC" sum="Total Tax Included" widget="monetary"/>
+                                    <field name="invoice_status"/>
+                                    <field name="state" />
+                                </tree>
+                                
+                            </field>
+                        </page>
+                        
+                        <page string="Activité">
+                            <group col='2'>
+                                <group>
+                                    <field name="inactif" string="Partenaire Inactif" />
+                                    <group>
+                                        <field name="max_order_date"/>
+                                        <field name="time_aft_last_order"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="bloque" string="Partenaire Bloqué" groups="sales_team.group_sale_manager"/>
+                                    <field name="blocking_date" groups="sales_team.group_sale_manager"/>
+                                    <field name="unblocking_date" groups="sales_team.group_sale_manager"/>
+                                    <button type="object" class="oe_stat_button oe_edit_only" string="Réactiver le client" name="unblock_client" groups="sales_team.group_sale_manager"/>
+                                </group>
+                            </group> 
+                        </page>
+                    </notebook>
+                      
+                <!--****************************************************************************************************************************************** 
+                *bouton invisble pour le moment - destiné à ouvrir une vue tree de tous les clients et donc de disposer de l'action pour realiser du merge   *
+                *******************************************************************************************************************************************-->    
+                <field name="company_type" position="before"> 
+                    <group>
+                        <button name="show_list_customer_to_merge" string="Liste" type="object" context="{'display_name':'name'}" invisible="1"/>
+                    </group>
+ 
+                <!--**************************************************************************************************************************************--> 
+                </field>
+                
+                <field name="company_type" position="after">
+                    <group col='3'>
+                        <group>
+                           <h3><field name="title" placeholder="Civilité" options="{'no_create_edit': True}"/></h3>
+                        </group>
+                        <group>
+                           <h2><field name="name"  default_focus="1" placeholder="Nom"  attrs="{'required' : [('type', '=', 'contact')]}"/></h2>
+                        </group>
+                        <group>
+                           <h2><field name="prenom" placeholder="Prénom" attrs="{'invisible': [('company_type', '=', 'company')]}"/></h2>     
+                        </group>
+                    </group>
+                    <group>
+                        <h3><field name="parent_id" placeholder="Société liée" attrs="{'invisible': [('company_type', '=', 'company')]}"/></h3>
+                    </group>
+                    <group>
+                        <field name="create_date" readonly="1"/>
+                    </group>
+                </field>
+                    
+                <xpath expr="//sheet/group" position="after">
+                            
+                            <field name="individu_type" widget="radio" class="oe_edit_only" options="{'horizontal': true}" attrs="{'invisible': [('company_type', '=', 'company')], 'required': [('company_type', '=', 'person')]}"/>
+                            <group col='3'>
+                                <group>  
+                                    <field name="praticien" attrs="{'invisible': ['|',('fournisseur', '=', True),('distributeur', '=', True)]}"/>
+                                    <field name="fournisseur" attrs="{'invisible': ['|','|','|',('praticien', '=', True),('prospect', '=', True),('distributeur', '=', True),('company_type', '=', 'person')]}"/>  
+                                </group>
+                                <group>
+                                    <field name="prospect" attrs="{'invisible': [('company_type','=','company')]}"/>
+                                    <field name="distributeur" attrs="{'invisible': ['|','|',('praticien', '=', True),('prospect', '=', True),('company_type', '=', 'person')]}"/>
+                                </group>
+                                <group>
+                                    <field name="fclient" string="Client" attrs="{'invisible':[('company_type','=','person')]}"/>
+                                    <field name="employee_apol" />
+                                </group>
+                            </group>
+                            <br/>
+                            
+                            <group col='3'>
+                                <group>
+                                    <div class="o_address_format">
+                                        <field name="specialite_ids" style="color:lightgrey" placeholder="Spécialité" options="{&quot;no_open&quot;: True}" class="o_address_street" attrs="{'invisible': ['|',('company_type', '=', 'company'),('individu_type', '=', 'employe')]}"/>
+                                        <field name="statut" style="color:lightgrey" widget="selection" placeholder="Statut Juridique A Renseigner" attrs="{'invisible': [('individu_type', '=', 'employe')]}" class="o_address_state"/>
+                                    </div>
+                                </group>
+                                <group>
+                                    <field name="diplome" attrs="{'invisible': [('prospect', '=', True)]}" string="Diplôme"/>        
+                                    <field name="annee_diplome" attrs="{'invisible': [('prospect', '=', True)]}" widget="date" string="Date d'obtention du diplôme"/>
+                                    <field name="property_product_pricelist_id" invisible="1"/>
+                                </group>
+                            
+                                <group>
+                                    <field name="soncas" string="SONCAS" style="color:lightgrey" widget="selection" placeholder="Motivation SONCAS à Renseigner" attrs="{'invisible': ['|','|',('fournisseur', '=', True),('distributeur', '=', True),('individu_type', '=', 'employe')]}" class="o_address_state"/>
+                                </group>
+                            </group>    
+                              <!--> <group>
+                                   <field name="individu_selection" widget="radio" class="oe_edit_only" options="{'horizontal': true}" attrs="{'invisible': [('company_type','=','company')]}"/>
+                                   <field name="company_selection" widget="radio" class="oe_edit_only" options="{'horizontal': true}" attrs="{'invisible': [('company_type','=','person')]}"/>
+                               </group>-->
+                    
+                    <!-- <group col='3'> -->
+                        <group>
+                            <field name="category_id" nolabel="1" options="{'no_create_edit': True}" >
+                                <tree>
+                                    <field name="name" string="Famille Client" placeholder="Famille Client" />
+                                    <field name="ref_cat_contact" />
+                                </tree>
+                            </field>
+                            
+                            <field name="duplicate_phone" invisible="1"/>
+                            
+                        </group>
+                    <!-- </group>  -->   
+                        
+                    
+                </xpath>                 
+             </field>          
+        </record>
+
+        
+      
+<!-->   
+**********************************
+*       AJOUT DE SOUS MENU       *
+*            KANBAN              *
+**********************************
+-->
+      
+        <record id="contacts.action_contacts_Client_Apolocontacts" model="ir.actions.act_window">
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="name">Clients</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,form,tree</field>
+            <field name="view_type">form</field>        
+            <field name="domain">[('customer','=',True), ('prospect','=',False)]</field>
+            <field name="arch" type="xml">   
+            <field name="help" type= "html">
+                <p class="oe_view_nocontent_create" >
+                    Cliquez pour créer un nouveau client.
+                </p>
+            </field>
+            </field>  
+        </record>
+        
+        <record id="action_contacts_apolo" model="ir.actions.act_window">
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="name">Clients</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="base.view_res_partner_filter"/>
+            <field name="domain">[('customer','=',True), ('prospect','=',False)]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Cliquez pour créer un nouveau client.
+              </p>
+            </field>
+        </record>
+             
+         
+         <menuitem name="Contacts"
+            id="contacts.menu_contacts"
+            sequence="4"
+            action="action_contacts_apolo"
+            web_icon="contacts,static/description/icon.png"
+            groups="base.group_user,base.group_partner_manager"/>
+         
+         <menuitem id="menu_action_apolo_client" name="Clients" parent="contacts.menu_contacts" sequence="16" 
+            action="contacts.action_contacts_Client_Apolocontacts"/>   
+               
+  
+                  
+        <record id="contacts.action_contacts_Prospect_Apolocontacts" model="ir.actions.act_window">
+            <field name="name">Prospects</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('prospect','=',True)]</field>
+            <field name="context">{'default_prospect':True}</field>
+            <field name="help" type= "html">
+                <p class="oe_view_nocontent_create" >
+                    Cliquez pour créer un nouveau Prospect.
+                </p>
+            </field>          
+        </record>  
+        
+        <menuitem id="menu_action_contacts_Prospect_Apolocontacts" name="Prospects" parent="contacts.menu_contacts" sequence="17"
+                  action="contacts.action_contacts_Prospect_Apolocontacts"/> 
+            
+         <record id="contacts.action_contacts_Fournisseur_Apolocontacts" model="ir.actions.act_window">
+            <field name="name">Fournisseur</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref="base.res_partner_kanban_view"/>
+            <field name="view_type">form</field>
+            <field name="domain">[('supplier','=',True)]</field>
+            <field name="context">{'default_is_company':True,'default_supplier':True}</field>
+            <field name="help" type= "html">
+                <p class="oe_view_nocontent_create" >
+                    Cliquez pour créer un nouveau Fournisseur.
+                </p>
+            </field>   
+        </record>  
+        
+        <menuitem id="menu_action_contacts_Fournisseur_Apolocontacts" name="Fournisseurs" parent="contacts.menu_contacts" sequence="18"
+                  action="contacts.action_contacts_Fournisseur_Apolocontacts"/>   
+                  
+        <record id="contacts.action_contacts_Distributeur_Apolocontacts" model="ir.actions.act_window">
+            <field name="name">Distributeurs</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('distributeur','=',True)]</field>    
+            <field name="context">{'default_is_company':True,'default_company_selection':'distributeur','default_distributeur':True}</field> 
+            <field name="help" type= "html">
+                <p class="oe_view_nocontent_create" >
+                    Cliquez pour créer un nouveau Distributeur.
+                </p>
+            </field>
+        </record>  
+        
+        <menuitem id="menu_action_contacts_Distributeur_Apolocontacts" name="Distributeurs" parent="contacts.menu_contacts" sequence="19"
+                  action="contacts.action_contacts_Distributeur_Apolocontacts"/>
+                  
+        <record id="contacts.action_contacts_Tous_Apolocontacts" model="ir.actions.act_window">
+            <field name="name">Tous</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="arch" type="xml">
+                <kanban create="false" edit="false">
+                
+                <xpath expr="//kanban" position="attributes">
+                    <attribute name="create">false</attribute>
+            </xpath>
+            </kanban>
+            </field>
+        </record>  
+        
+        <menuitem id="menu_action_contacts_Tous_Apolocontacts" name="Tous" parent="contacts.menu_contacts" sequence="20"
+                  action="contacts.action_contacts_Tous_Apolocontacts"/>
+                  
+        <menuitem id="menu_action_contacts_Contac_Tags" name="Contact Tags" parent="contacts.menu_contacts" sequence="21"
+                  action="base.action_partner_category_form"/>
+                 
+        <!--Reactivate client action -->
+        <record model="ir.actions.server" id="action_reactivate">
+            <field name="name">Réactiver le(s) client(s)</field>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_res_partner" />
+            <field name="groups" eval="[(4,ref('sales_team.group_sale_manager'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+if env.user.has_group('sales_team.group_sale_manager') == False:
+    raise Warning('Seuls les gestionnaires de ventes peuvent réactiver les clients')
+#    raise Warning('You must be in the sales_team.group_sale_manager for using this action')
+env['res.partner'].browse(context['active_ids']).unblock_client()
+            </field>
+        </record>
+        
+        <record id="ir_testing" model="ir.values">
+            <field name="key2" eval="'client_action_multi'"/>
+            <field name="model" eval="'res.partner'"/>
+            <field name="name">Réactiver le(s) client(s)</field>
+            <field name="value" eval="'ir.actions.server,%d'%action_reactivate"/>
+            <field name="groups" eval="[(4,ref('sales_team.group_sale_manager'))]"/>
+        </record>
+
+
+<!--
+**********************************
+*       AJOUT DE NOUVEAUX        *
+*   CHAMPS DANS LE TREEFORM      *
+**********************************
+-->
+
+
+<!-- Change view mode in Partner module -->
+        <record id="my_view_partner_tree" model="ir.ui.view">
+            <field name="name">res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field eval="3" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Contacts">
+                    <field name="display_name" string="Name"/>
+                    <field name="function" invisible="1"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="contact_address" />
+                    <field name="user_id" invisible="1"/>
+                    <field name="is_company" invisible="1"/>
+                    <field name="country_id" invisible="1"/>
+                    <field name="parent_id" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                    <field name="bloque" string="Bloqué"  />
+                    <field name="blocking_date"/>
+                    <!-- attrs="{'invisible': [('bloque','!=','False')]}" -->
+                </tree>
+            </field>
+        </record>
+        <!-- Hide the fields "customer" if prospect is True -->
+        <record id="ApoloContacts_customer_base_form_view_hide" model="ir.ui.view">
+            <field name="name">res.partner.customer.hide.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+             <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale']/field[@name='customer']" position="attributes">
+                <attribute name="attrs">{'invisible': [('prospect', '=', True)]}</attribute>
+            </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
