@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <template id="website_product_page_downloads" name="Product Downloads Followup" inherit_id="website_sale.product">
+        <xpath expr="//a[@id='add_to_cart']" position="after">
+            <t t-set="attachments" t-value="digital_attachments"/>
+            <t t-if="attachments">
+                <br />
+                <span class="dropdown">
+                    <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                        Downloads <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <t t-foreach="attachments" t-as="a">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" t-att-href="'/web/content/%i?download=1' % a['id']" target="_blank"><t t-esc="a['name']"/></a></li>
+                        </t>
+                    </ul>
+                </span>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
